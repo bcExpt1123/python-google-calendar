@@ -29,9 +29,6 @@ EVENT = {
     ],
 }
 
-# e = CAL.events().insert(calendarId='primary',
- #       sendNotifications=True, body=EVENT).execute()
-
 event = CAL.calendars().get(calendarId='primary').execute()
 
 page_token = None
@@ -49,5 +46,3 @@ while True:
     page_token = events.get('nextPageToken')
     if not page_token:
         break
-
-# print(event['summary'])
